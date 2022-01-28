@@ -25,12 +25,6 @@
 </script>
 
 <template>
-  <h1>Global Weather</h1>
+  <h1 :class="'display-1'">Global Weather</h1>
   <FetchWeather v-for="city in citiesArray" :city-name="city" :key="city" />
 </template>
-
-<style>
-  h1 {
-    text-transform: uppercase;
-  }
-</style>

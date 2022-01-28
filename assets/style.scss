@@ -1,0 +1,44 @@
+$light: rgb(245, 243, 238);
+
+@import 'bootstrap/scss/bootstrap';
+
+h1 {
+  color: $light;
+  text-transform: uppercase;
+}
+
+body {
+  background: $blue-600;
+  text-align: center;
+}
+
+nav {
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    color: $light;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $light;
+  }
+}
+
+div {
+  h2 {
+    color: $light;
+  }
+
+  p {
+    color: $light;
+  }
+}
+
+.warning {
+  color: firebrick;
+}

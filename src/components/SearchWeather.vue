@@ -14,7 +14,7 @@
       weatherOnClick() {
         axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${this.searchedCity}&units=metric&appid=bf3e73e780eccd2d55f7b0ddfc0e1559`
+            `https://api.openweathermap.org/data/2.5/weather?q=${this.searchedCity}&units=metric&appid=13b2ed02beb4ced6bf991af523fe664a`
           )
           .then((response) => (this.weather = response.data))
 
@@ -39,18 +39,40 @@
 </script>
 
 <template>
-  <h1>Weather</h1>
-  <input v-model="searchedCity" type="text" @keyup.enter="weatherOnClick" />
-  <input type="button" value="Search" @click="weatherOnClick" />
+  <h1 :class="'display-1'">Weather</h1>
+  <input
+    v-model="searchedCity"
+    type="text"
+    @keyup.enter="weatherOnClick"
+    placeholder="Search city..."
+  />
+  <input
+    type="button"
+    value="Search"
+    @click="weatherOnClick"
+    :class="'btn btn-light'"
+  />
   <div v-if="weather !== null">
     <h1>{{ weather.name }}, {{ weather.sys.country }}</h1>
     <p>{{ formatDescription }}</p>
     <p>{{ Math.round(weather.main.temp) }}°C</p>
-    <input type="button" :value="addValue" @click="addOnClick()" />
+    <input
+      type="button"
+      :value="addValue"
+      @click="addOnClick"
+      :class="'btn btn-light'"
+    />
   </div>
 </template>
 
-<!-- TODO
-1. Error om stad inte finns
-2. Inte kunna lägga till stad 2ggr
--->
+<style lang="scss" scoped>
+  input[type='text'] {
+    border: none;
+    padding: 6px;
+    margin: 6px;
+  }
+
+  input[type='button'] {
+    margin: 6px;
+  }
+</style>

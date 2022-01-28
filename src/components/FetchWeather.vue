@@ -5,7 +5,7 @@
     created() {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=bf3e73e780eccd2d55f7b0ddfc0e1559`
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=13b2ed02beb4ced6bf991af523fe664a`
         )
         .then((response) => (this.weather = response.data))
     },
@@ -17,7 +17,7 @@
         type: String,
         required: true,
         default() {
-          'Error'
+          'Loading'
         }
       }
     },
@@ -38,5 +38,6 @@
     <p>{{ formatDescription }}</p>
     <p>{{ Math.round(weather.main.temp) }}°C</p>
   </div>
-  <p v-else>{{ 'Error' }}</p>
+
+  <p v-else>Error</p>
 </template>

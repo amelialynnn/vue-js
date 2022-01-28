@@ -1,16 +1,16 @@
 import { createStore } from 'vuex'
 
 const mutations = {
-    increment(state) {
-      state.counter += 1
-    },
     saveFavorites(state, newCity) {
       state.favorite.push(newCity)
+    },
+    addUser(state, newUserName) {
+      state.userInfo.push(newUserName)
     }
   },
   state = {
-    counter: 0,
-    favorite: []
+    favorite: [],
+    userInfo: []
   }
 
 export default createStore({ mutations, state, strict: true })
