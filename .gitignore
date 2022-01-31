@@ -3,3 +3,4 @@ dist-ssr
 .DS_Store
 node_modules
 notes.txt
+.env

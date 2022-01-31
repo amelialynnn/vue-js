@@ -5,12 +5,16 @@
     created() {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=13b2ed02beb4ced6bf991af523fe664a`
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.api_key}`
         )
         .then((response) => (this.weather = response.data))
     },
     data() {
-      return { weather: null, city: this.cityName }
+      return {
+        weather: null,
+        city: this.cityName,
+        api_key: '2edb72048eecbe6a069e7f7c407cc65a' //process.env.API_KEY
+      }
     },
     props: {
       cityName: {
