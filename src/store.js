@@ -4,8 +4,8 @@ const mutations = {
     saveFavorites(state, newCity) {
       state.favorite.push(newCity)
     },
-    addUser(state, newUserName) {
-      state.userInfo.push(newUserName)
+    addUser(state, userData) {
+      state.userInfo.push(userData)
     }
   },
   state = {

@@ -5,9 +5,8 @@
         submittedName: null,
         submittedEmail: null,
         submittedPassword: null,
-        registeredUsers: ['Lisa', 'Sven', 'Lena', 'Matteus'],
-        userExists: false,
-        formSubmitted: this.$store.state.userInfo.length
+        registeredUsers: ['Lisa', 'Sven', 'Lena', 'Matteus', 'Svea'],
+        userExists: false
       }
     },
     methods: {
@@ -32,8 +31,9 @@
 </script>
 
 <template>
-  <form class=".container" v-if="$store.state.userInfo.length === 0">
-    <div class="form-group col-sm-10">
+  <form class="container" v-if="$store.state.userInfo.length === 0">
+    <div class="form-group">
+      <h1>Sign up</h1>
       <label for="userName">Username</label>
       <input
         type="username"
@@ -44,7 +44,7 @@
       />
       <p v-if="userExists === true" class="warning">Username already exsists</p>
     </div>
-    <div class="form-group col-sm-10">
+    <div class="form-group">
       <label for="InputEmail">Email address</label>
       <input
         type="email"
@@ -55,7 +55,7 @@
         v-model="submittedEmail"
       />
     </div>
-    <div class="form-group col-sm-10">
+    <div class="form-group">
       <label for="ImputPassword">Password</label>
       <input
         type="password"
@@ -91,11 +91,5 @@
 
   input {
     margin: 15px;
-  }
-
-  @media (max-width: 575.98px) {
-    input {
-      width: 80vw;
-    }
   }
 </style>

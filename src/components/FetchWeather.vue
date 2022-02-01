@@ -13,7 +13,7 @@
       return {
         weather: null,
         city: this.cityName,
-        api_key: '2edb72048eecbe6a069e7f7c407cc65a' //process.env.API_KEY
+        api_key: import.meta.env.VITE_API_KEY
       }
     },
     props: {
