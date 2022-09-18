@@ -3,6 +3,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  base: '/weather-app/',
   build: {
     target: 'es2015'
   },
